@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mpena-zu <mpena-zu@student.42madrid.c      +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 13:50:48 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/02/14 17:34:15 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/02/17 22:07:56 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,15 @@ int	conversion(char c, va_list args)
 		return (ft_putstr(va_arg(args, char *)));
 	//else if (c == 'p')
 	else if (c == 'd')
-	{
-		ft_putnbr(va_arg(args, int));
-		return (ft_len_int(va_arg(args, int)));
-	}
-	//else if (c == 'i')
-	//else if (c == 'u')
-	//else if (c == 'x')
-	//else if (c == 'X')
+		return (ft_putnbr(va_arg(args, int)));
+	else if (c == 'i')
+		return (ft_putnbr(va_arg(args, int)));
+	else if (c == 'u')
+		return (ft_printf_u(va_arg(args, unsigned int)));
+	else if (c == 'x')
+		return (ft_hexa(va_arg(args, unsigned int)));
+	else if (c == 'X')
+		return (ft_hexa_upper(va_arg(args, unsigned int)));
 	else if (c == '%')
 		write(1, "%", 1);
 	return (1);
@@ -65,8 +66,8 @@ int	main(void)
 	int res_printf;
 	int res_ft_printf;
 	
-	res_printf = printf("%d\n", -1);
-	res_ft_printf = ft_printf("%d\n", -1);
+	res_printf = printf("%p\n", (void *)52);
+	res_ft_printf = ft_printf("%i\n", 1);
 	printf("printf = %i\n", res_printf);
 	printf("ft_printf = %i\n", res_ft_printf);
 	return (0);

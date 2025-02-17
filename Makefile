@@ -8,7 +8,7 @@ AR = ar rcs
 
 RM = rm -rf
 
-SOURCES = ft_printf.c ft_putchar.c ft_putstr.c ft_putnbr.c ft_len_int.c
+SOURCES = ft_printf.c ft_putchar.c ft_putstr.c ft_putnbr.c ft_printf_u.c ft_hexa.c ft_hexa_upper.c
 
 OBJECTS = $(SOURCES:.c=.o)
 
