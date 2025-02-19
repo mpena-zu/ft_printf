@@ -30,7 +30,7 @@ int	conversion(char c, va_list args)
 		return (ft_hexa(va_arg(args, unsigned int)));
 	else if (c == 'X')
 		return (ft_hexa_upper(va_arg(args, unsigned int)));
-	else
+	else if (c == '%')
 		write(1, "%", 1);
 	return (1);
 }

@@ -24,7 +24,7 @@ $(NAME): $(OBJECTS)
 clean:
 	$(RM) $(OBJECTS)
 
-flcean: clean
+fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
