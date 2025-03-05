@@ -19,7 +19,7 @@ $(NAME): $(OBJECTS)
 	$(AR) $(NAME) $(OBJECTS)
 
 %.o: %.c
-	$(CC) $(FLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJECTS)
